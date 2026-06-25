@@ -52,8 +52,16 @@ button:not(.btn-danger):not(.btn-primary) {
 #result {
     margin-top: 40px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
     gap: 20px;
+
+
 }
 
 .card {
@@ -190,4 +198,44 @@ button:not(.btn-danger):not(.btn-primary) {
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .form-section {
+        width: 100%;
+        max-width: 100%;
+        position: static;
+    }
+
+    #result {
+        width: 100%;
+        margin-top: 20px;
+
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 100% !important;
+    }
+
+    .btn-area,
+    .card-body span {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
 }
